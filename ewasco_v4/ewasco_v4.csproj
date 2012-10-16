@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD92B4B1-5DCC-4410-AB8D-6A934B15780D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ewasco_v4</RootNamespace>
+    <AssemblyName>ewasco_v4</AssemblyName>
+    <ApplicationIcon>Earth.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.ADF.Local">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreateNewDocument.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Content Include="Earth.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArcDataBinding\ArcDataBinding2010.csproj">
+      <Project>{9EE68BB1-C309-4B24-9655-D2CC5AE42E0C}</Project>
+      <Name>ArcDataBinding2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!--
+
+
+
+      Workaround for VS2010 .NET 3.5 application referencing x86 assembly in resx file on 64-bit OS
+
+      http://social.msdn.microsoft.com/Forums/en-US/msbuild/thread/e5900710-9849-4d10-aa28-48b734d06bf2 
+
+       
+
+-->
+  <PropertyGroup>
+    <ForceResGen32Bit Condition="'$(MSBuildToolsVersion)'=='4.0' And '$(PROCESSOR_ARCHITEW6432)'!='' And '$(TargetingClr2Framework)'=='true' And '$(PlatformTarget)'=='x86'">true</ForceResGen32Bit>
+  </PropertyGroup>
+  <Target Name="BeforeResGen" Condition="'$(ForceResGen32Bit)' == 'true'">
+    <PropertyGroup>
+      <ResGenSdkToolsPath>$(IntermediateOutputPath)ResGenForced32Bit\</ResGenSdkToolsPath>
+    </PropertyGroup>
+    <!-- Copy resgen.exe to intermediate working directory for UAC settings -->
+    <Copy SourceFiles="$(TargetFrameworkSDKToolsDirectory)ResGen.exe" DestinationFiles="$(ResGenSdkToolsPath)ResGen.exe" />
+    <!-- corflags.exe resgen.exe /32BIT+ /Force-->
+    <Exec WorkingDirectory="$(ResGenSdkToolsPath)" Command="&quot;$(TargetFrameworkSDKToolsDirectory)corflags.exe&quot; ResGen.exe /32BIT+ /Force" />
+    <!-- GenerateResource Task parameters
+
+        Using the non-64bit Tracker.exe and indicate resgen.exe has been forced to x86 -->
+    <PropertyGroup>
+      <ResGenTrackerSdkPath>$(SDK40ToolsPath)</ResGenTrackerSdkPath>
+      <ResGenToolArchitecture>Managed32Bit</ResGenToolArchitecture>
+      <CacheTargetFrameworkSDKToolsDirectory>$(TargetFrameworkSDKToolsDirectory)</CacheTargetFrameworkSDKToolsDirectory>
+      <TargetFrameworkSDKToolsDirectory>$(ResGenSdkToolsPath)</TargetFrameworkSDKToolsDirectory>
+    </PropertyGroup>
+  </Target>
+  <Target Name="AfterResGen" Condition="'$(ForceResGen32Bit)' == 'true'">
+    <PropertyGroup>
+      <TargetFrameworkSDKToolsDirectory>$(CacheTargetFrameworkSDKToolsDirectory)</TargetFrameworkSDKToolsDirectory>
+    </PropertyGroup>
+    <RemoveDir Directories="$(ResGenSdkToolsPath)" Condition="Exists('$(ResGenSdkToolsPath)')" />
+  </Target>
+</Project>
